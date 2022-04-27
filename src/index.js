@@ -11,6 +11,11 @@ const landingPage = () => {
   firstContainer.appendChild(createSegments("about"));
   firstContainer.appendChild(restHours());
   body.appendChild(firstContainer);
+  body.appendChild(createlaksaBackground());
+  
+  
+
+  
 };
 
 const createImage = () => {
@@ -19,6 +24,18 @@ const createImage = () => {
     "https://wallpapercrafter.com/th800/227986-chefs-in-a-steamy-kitchen-preparing-foodrestaurant.jpg";
   return img;
 };
+
+const createlaksaBackground = () => {
+    const img = document.createElement("div");
+    img.setAttribute("id", "laksa-bg");
+
+    const imgText = document.createElement("div");
+    const laksaText = document.createElement("h1");
+    laksaText.textContent = "Simply delicious";
+
+    imgText.appendChild(laksaText);
+    return img;
+}
 
 const createSegments = (sectionName) => {
   const container = document.createElement("section");
@@ -87,6 +104,20 @@ const restHours = () => {
 
 
 
+
+
+
+
+const ballAnimation = () => {
+    const container = document.createElement("div");
+    container.setAttribute("class", "animation-wrapper")
+    for (let i = 0; i < 8; i++){
+        const circle = document.createElement('div');
+        circle.setAttribute("class", "circle");
+        container.appendChild(circle);
+    }
+    return container;
+}
 
 
 landingPage();
