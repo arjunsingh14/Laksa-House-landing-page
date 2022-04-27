@@ -31,7 +31,7 @@ const createTopBar = () => {
   contact.appendChild(contactText);
   //logo
   const logo = document.createElement("h1");
-  logo.innerHTML = "Placeholder";
+  logo.innerHTML = "Laksa House";
 
   //assigning all child elements to their respective parent container
   btnCointainer.appendChild(aboutUs);

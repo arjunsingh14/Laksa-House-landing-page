@@ -1,6 +1,6 @@
 import "../style.scss";
 import createTopBar from "./pages/helpers/top-bar";
-const restaurant = "Placeholder";
+const restaurant = "Laksa house";
 
 const body = document.querySelector("body");
 body.appendChild(createTopBar());
@@ -12,6 +12,7 @@ const landingPage = () => {
   firstContainer.appendChild(restHours());
   body.appendChild(firstContainer);
   body.appendChild(createlaksaBackground());
+  
   
   
 
@@ -28,14 +29,32 @@ const createImage = () => {
 const createlaksaBackground = () => {
     const img = document.createElement("div");
     img.setAttribute("id", "laksa-bg");
+     
+    const blurDiv = document.createElement("div");
+    blurDiv.setAttribute("id", "blur");
 
-    const imgText = document.createElement("div");
-    const laksaText = document.createElement("h1");
-    laksaText.textContent = "Simply delicious";
+    const section = document.createElement("section");
+    const header = document.createElement("h1");
+    const button = document.createElement("button");
 
-    imgText.appendChild(laksaText);
+    header.textContent = "Hungry?";
+    button.textContent = "Book a table";
+
+    section.appendChild(header);
+    section.appendChild(button);
+
+    blurDiv.appendChild(section);
+    const ballDiv = document.createElement("div");
+    
+
+
+    img.appendChild(blurDiv)
+
+
+    
     return img;
 }
+
 
 const createSegments = (sectionName) => {
   const container = document.createElement("section");

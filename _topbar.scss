@@ -91,6 +91,9 @@ img {
     transform: translateX(0);
   }
 }
+
+
+
 #about-container {
   @include segments(white, sans-serif, 5rem, 1.2rem, black, black);
   h2 {
@@ -135,32 +138,55 @@ img {
 #laksa-bg {
   margin: 0;
   width: 100%;
-  height: 500px;
+  height: 400px;
   background-image: url("./src/assets/laksa-soup-recipe-4172623-hero-01-df79d6ef4499427f9c86289205c705a6.webp");
 
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
 
-  filter: blur(4px);
-  -webkit-filter: blur(3px);
-  h1 {
-    background-color: rgb(0, 0, 0); /* Fallback color */
-    background-color: rgba(0, 0, 0, 0.4); /* Black w/opacity/see-through */
-    color: white;
-    font-weight: bold;
-    border: 3px solid #f1f1f1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 80%;
-    padding: 20px;
-    text-align: center;
+
+  #blur{
+    background: transparent;
+    backdrop-filter: blur(4px);
+    height: 100%;
+	width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+
+    section{
+        h1{
+            font-size: 6rem;
+            color: white;
+        }
+        button{
+            margin-top: 10px;
+            border: solid;
+            border-color: white;
+            border-radius: 7px;
+            padding: 10px;
+            color: #e3e3e3;
+            background-color: transparent;
+            transition: background-color 0.3s ease-in-out 75ms;
+            font-size: 2rem;
+        }
+        button:hover{
+            background-color: #9a0005;
+            
+
+        }
+
+    }
+    
   }
+ 
+
 }
 
+
+ 
 @media (max-width: 500px) {
   #top-container {
     flex-direction: column;
@@ -187,31 +213,6 @@ img {
     max-height: 600px;
   }
 }
-.circle {
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  border-radius: 100%;
-  background-color: #9a0005;
-  animation: move-the-circle 1s infinite;
-  transform-origin: center center;
-}
 
-@for $num from 1 through 8 {
-  .circle:nth-child(#{$num}) {
-    left: ($num - 1) * 30px;
-    animation-delay: $num * 0.1s;
-  }
-}
 
-@keyframes move-the-circle {
-  0% {
-    transform: translate(0, 0);
-  }
-  50% {
-    transform: translate(0, 50px);
-  }
-  100% {
-    transform: translate(0, 0);
-  }
-}
+
